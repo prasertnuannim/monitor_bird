@@ -11,7 +11,6 @@ export async function POST(req: Request) {
     const body = await req.json();
     const { temperature, humidity } = body;
 
- return NextResponse.json({ success: true, message:humidity, humidity });
     if (!temperature || !humidity) {
       return NextResponse.json({ error: 'Temperature and humidity are required!' }, { status: 400 });
     }
@@ -22,7 +21,6 @@ export async function POST(req: Request) {
     return NextResponse.json({ success: true, message: 'Data inserted successfully!' });
   } catch (error) {
     console.error('Error inserting data:', error);
-
     return NextResponse.json({ success: false, error: 'Failed to insert data.' }, { status: 500 });
   }
 }
