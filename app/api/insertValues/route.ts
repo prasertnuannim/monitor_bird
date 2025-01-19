@@ -8,6 +8,7 @@ const pool = new Pool({
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method === 'POST') {
+    console.log(req);
     const { temperature, humidity } = req.body;
 console.log(temperature,temperature);
     // Validate the incoming data
