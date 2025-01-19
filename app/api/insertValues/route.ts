@@ -11,7 +11,7 @@ export async function POST(req: Request) {
     const body = await req.json();
     const { temperature, humidity } = body;
 
-
+ return NextResponse.json({ success: true, message: temperature, humidity });
     if (!temperature || !humidity) {
       return NextResponse.json({ error: 'Temperature and humidity are required!' }, { status: 400 });
     }
