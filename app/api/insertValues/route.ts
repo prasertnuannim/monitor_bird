@@ -2,9 +2,9 @@ import { NextApiRequest, NextApiResponse } from 'next';
 import { Pool } from 'pg';
 
 // Create a connection pool
-const pool = new Pool({
-  connectionString: process.env.POSTGRES_URL,
-});
+// const pool = new Pool({
+//   connectionString: process.env.POSTGRES_URL,
+// });
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method === 'POST') {
